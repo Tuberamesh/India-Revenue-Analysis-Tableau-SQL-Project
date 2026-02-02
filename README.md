@@ -47,8 +47,8 @@ Dashboards are designed with **analyst-grade UI/UX** for easy understanding and 
 - **Insight:** Dual-axis bar & line charts showing **orders vs revenue per category**  
 - **Highlights:** Top-selling categories  
 
-![Category Analysis](category_analysis.png)  
-[🔗 View Tableau Dashboard](#)
+![Category Analysis](category_a)  
+[🔗 View Tableau Dashboard](https://public.tableau.com/app/profile/ramesh.g8388/viz/Category-Analysis/Sheet2)
 
 ---
 
@@ -58,18 +58,11 @@ Dashboards are designed with **analyst-grade UI/UX** for easy understanding and 
 - **Bubble Color:** Orders  
 
 ![Top 10 Cities Map](top10_cities_map.png)  
-[🔗 View Tableau Dashboard](#)
+[🔗 View Tableau Dashboard](https://public.tableau.com/app/profile/ramesh.g8388/viz/Toprevenuecities/Sheet3)
 
 ---
 
-### 4️⃣ State Revenue Analysis
-- **Insight:** Total revenue per state & **state-wise avg revenue %**  
-- **Validation:** Cross-checked with SQL outputs  
 
-![State Revenue Analysis](state_revenue_analysis.png)  
-[🔗 View Tableau Dashboard](#)
-
----
 
 ## 💾 SQL Outputs
 All queries executed in **SQLite / DB Fiddle**:  
