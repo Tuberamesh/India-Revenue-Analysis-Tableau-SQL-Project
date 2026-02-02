@@ -39,7 +39,7 @@ Dashboards are designed with **analyst-grade UI/UX** for easy understanding and 
 - **Revenue:** Millions represented clearly  
 
 ![Monthly Revenue](monthly_revenue.png)  
-[🔗 View Tableau Dashboard](#)
+[🔗 View Tableau Dashboard](https://public.tableau.com/app/profile/ramesh.g8388/viz/Monthly-Analysis/Sheet1?publish=yes)
 
 ---
 
