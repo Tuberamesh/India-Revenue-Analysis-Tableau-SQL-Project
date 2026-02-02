@@ -72,12 +72,14 @@ All queries executed in **SQLite / DB Fiddle**:
 - Data consistency checks  
 
 ### PDF Reports
-- [📄 Monthly Revenue](#)  
-- [📄 Category Analysis](#)  
-- [📄 Top 10 Cities](#)  
-- [📄 State Revenue Analysis](#)  
-- [📄 Status Check](#)  
-- [📄 Data Quality Analysis](#)
+- [📄 Monthly Revenue](https://github.com/Tuberamesh/India-Revenue-Analysis-Tableau-SQL-Project/blob/main/Amazon-SQL-Analysis/SQL-outputs/montly_revenue.pdf)  
+- [📄 Category Analysis](https://github.com/Tuberamesh/India-Revenue-Analysis-Tableau-SQL-Project/blob/main/Amazon-SQL-Analysis/SQL-outputs/category_revenue.pdf)  
+- [📄 Top 10 Cities](https://github.com/Tuberamesh/India-Revenue-Analysis-Tableau-SQL-Project/blob/main/Amazon-SQL-Analysis/SQL-outputs/top_10_revenue_city.pdf)  
+- [📄 State Revenue Analysis](https://github.com/Tuberamesh/India-Revenue-Analysis-Tableau-SQL-Project/blob/main/Amazon-SQL-Analysis/SQL-outputs/state_revenue.pdf)  
+- [📄 Status wise revenue percentage](https://github.com/Tuberamesh/India-Revenue-Analysis-Tableau-SQL-Project/blob/main/Amazon-SQL-Analysis/SQL-outputs/status%20wise%20revenue%20percentage.pdf)  
+- [📄 Data Quality Analysis](https://github.com/Tuberamesh/India-Revenue-Analysis-Tableau-SQL-Project/blob/main/Amazon-SQL-Analysis/SQL-outputs/data_analysis_Quality.pdf)
+- [📄 Status wise revenue analysis](https://github.com/Tuberamesh/India-Revenue-Analysis-Tableau-SQL-Project/blob/main/Amazon-SQL-Analysis/SQL-outputs/status_wise_revenue_analysis.pdf)
+- [📄 Status wise avg order revenue](https://github.com/Tuberamesh/India-Revenue-Analysis-Tableau-SQL-Project/blob/main/Amazon-SQL-Analysis/SQL-outputs/state_wise_avg_order.pdf)
 
 ---
 
