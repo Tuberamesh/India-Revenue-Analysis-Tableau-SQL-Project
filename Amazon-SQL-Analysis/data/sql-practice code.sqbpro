@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path=":memory:" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser pragmas query" current="3"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="1953"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><table title="amazon_sales" custom_title="0" dock_id="1" table="4,12:mainamazon_sales"/><dock_state state="000000ff00000000fd00000001000000020000014f000002a7fc0100000001fb000000160064006f0063006b00420072006f007700730065003101000000000000014f0000010100ffffff0000014f0000000000000004000000040000000800000008fc00000000"/><default_encoding codec=""/><browse_table_settings/></tab_browse><tab_sql><sql name="SQL 1*">SELECT * 
+FROM amazon_sales 
+LIMIT 5;
+
+SELECT 
+    MIN(field3) AS start_date,
+    MAX(field3) AS end_date
+FROM amazon_sales
+WHERE field3 != 'Date';
+
+SELECT 
+    MIN(date('20' || substr(field3, 7, 2) || '-' || substr(field3, 1, 2) || '-' || substr(field3, 4, 2))) AS start_date,
+    MAX(date('20' || substr(field3, 7, 2) || '-' || substr(field3, 1, 2) || '-' || substr(field3, 4, 2))) AS end_date
+FROM amazon_sales
+WHERE field3 != 'Date';
+
+CREATE TABLE amazon_sales_clean AS
+SELECT
+    field1 AS idx,
+    field2 AS order_id,
+    date(
+        '20' || substr(field3, 7, 2) || '-' ||
+        substr(field3, 1, 2) || '-' ||
+        substr(field3, 4, 2)
+    ) AS order_date,
+
+    field4 AS status,
+    field5 AS fulfilment,
+    field6 AS sales_channel,
+    field14 AS quantity,
+    field16 AS amount,
+    field17 AS ship_city,
+    field18 AS ship_state,
+    field20 AS ship_country
+FROM amazon_sales
+WHERE field3 != 'Date';
+
+
+SELECT *
+FROM amazon_sales_clean
+LIMIT 5;
+
+SELECT
+    MIN(order_date) AS start_date,
+    MAX(order_date) AS end_date
+FROM amazon_sales_clean;
+
+SELECT
+    COUNT(DISTINCT order_id) AS total_orders,
+    SUM(quantity) AS total_quantity,
+    ROUND(SUM(amount), 2) AS total_revenue,
+    ROUND(SUM(amount) / COUNT(DISTINCT order_id), 2) AS avg_order_value
+FROM amazon_sales_clean;
+
+
+
+SELECT
+    status,
+    COUNT(DISTINCT order_id) AS orders,
+    ROUND(SUM(amount), 2) AS revenue
+FROM amazon_sales_clean
+GROUP BY status
+ORDER BY orders DESC;
+
+
+SELECT
+    status,
+    COUNT(DISTINCT order_id) AS total_orders,
+    ROUND(SUM(amount), 2) AS revenue,
+    ROUND(
+        SUM(amount) * 100.0 / (SELECT SUM(amount) FROM amazon_sales_clean),
+        2
+    ) AS revenue_percentage
+FROM amazon_sales_clean
+GROUP BY status
+ORDER BY revenue DESC;
+
+
+SELECT
+    ROUND(SUM(amount), 2) AS total_revenue
+FROM amazon_sales_clean;
+
+SELECT
+    status,
+    CASE
+        WHEN status LIKE 'Shipped%' 
+             AND status NOT LIKE '%Returned%' 
+             AND status NOT LIKE '%Rejected%'
+             AND status NOT LIKE '%Lost%' 
+             AND status NOT LIKE '%Damaged%'
+            THEN 'Completed'
+
+        WHEN status = 'Cancelled'
+             OR status LIKE '%Returned%'
+             OR status LIKE '%Rejected%'
+             OR status LIKE '%Lost%'
+             OR status LIKE '%Damaged%'
+            THEN 'Cancelled / Failed'
+
+        ELSE 'Pending'
+    END AS order_stage
+FROM amazon_sales_clean;
+
+
+SELECT
+    strftime('%Y-%m', order_date) AS year_month,
+    COUNT(DISTINCT order_id) AS total_orders,
+    ROUND(SUM(amount), 2) AS monthly_revenue
+FROM amazon_sales_clean
+GROUP BY year_month
+ORDER BY year_month;
+
+DROP TABLE amazon_sales_clean;
+
+CREATE TABLE amazon_sales_clean AS
+SELECT
+    field1 AS idx,
+    field2 AS order_id,
+
+    date(
+        '20' || substr(field3, 7, 2) || '-' ||
+        substr(field3, 1, 2) || '-' ||
+        substr(field3, 4, 2)
+    ) AS order_date,
+
+    field4  AS status,
+    field5  AS fulfilment,
+    field6  AS sales_channel,
+    field10 AS category,        
+    field14 AS quantity,
+    field16 AS amount,
+    field17 AS ship_city,
+    field18 AS ship_state,
+    field20 AS ship_country
+FROM amazon_sales
+WHERE field3 != 'Date';
+
+
+
+
+SELECT
+    category,
+    COUNT(DISTINCT order_id) AS total_orders,
+    ROUND(SUM(amount), 2) AS total_revenue
+FROM amazon_sales_clean
+GROUP BY category
+ORDER BY total_revenue DESC;
+
+
+SELECT
+    ship_state,
+    COUNT(DISTINCT order_id) AS total_orders,
+    ROUND(SUM(amount), 2) AS total_revenue
+FROM amazon_sales_clean
+GROUP BY ship_state
+ORDER BY total_revenue DESC;
+
+
+SELECT
+    ship_state,
+	ship_city,
+    COUNT(DISTINCT order_id) AS total_orders,
+    ROUND(SUM(amount), 2) AS total_revenue
+FROM amazon_sales_clean
+GROUP BY ship_city, ship_state
+ORDER BY total_revenue DESC
+LIMIT 10;
+
+SELECT
+    ship_state,
+    ROUND(SUM(amount) / COUNT(DISTINCT order_id), 2) AS avg_order_value
+FROM amazon_sales_clean
+GROUP BY ship_state
+ORDER BY avg_order_value DESC;
+
+SELECT
+    COUNT(*) AS total_rows,
+    COUNT(ship_state) AS non_null_states,
+    COUNT(ship_city) AS non_null_cities
+FROM amazon_sales_clean;
+
+
+</sql><current_tab id="0"/></tab_sql></sqlb_project>
