@@ -38,7 +38,7 @@ Dashboards are designed with **analyst-grade UI/UX** for easy understanding and 
 - **Insight:** Line charts showing revenue trends per month  
 - **Revenue:** Millions represented clearly  
 
-![Monthly Revenue](monthly_revenue.png)  
+![Monthly Revenue](https://github.com/Tuberamesh/India-Revenue-Analysis-Tableau-SQL-Project/blob/main/Amazon-SQL-Analysis/Tableau%20-outputs/monthly%20-Analysis.png)  
 [🔗 View Tableau Dashboard](https://public.tableau.com/app/profile/ramesh.g8388/viz/Monthly-Analysis/Sheet1?publish=yes)
 
 ---
@@ -47,7 +47,7 @@ Dashboards are designed with **analyst-grade UI/UX** for easy understanding and 
 - **Insight:** Dual-axis bar & line charts showing **orders vs revenue per category**  
 - **Highlights:** Top-selling categories  
 
-![Category Analysis](category_a)  
+![Category Analysis](https://github.com/Tuberamesh/India-Revenue-Analysis-Tableau-SQL-Project/blob/main/Amazon-SQL-Analysis/Tableau%20-outputs/category-Analysis.png)  
 [🔗 View Tableau Dashboard](https://public.tableau.com/app/profile/ramesh.g8388/viz/Category-Analysis/Sheet2)
 
 ---
@@ -57,7 +57,7 @@ Dashboards are designed with **analyst-grade UI/UX** for easy understanding and 
 - **Bubble Size:** Revenue  
 - **Bubble Color:** Orders  
 
-![Top 10 Cities Map](top10_cities_map.png)  
+![Top 10 Cities Map](https://github.com/Tuberamesh/India-Revenue-Analysis-Tableau-SQL-Project/blob/main/Amazon-SQL-Analysis/Tableau%20-outputs/top%20revenue%20cities.png)  
 [🔗 View Tableau Dashboard](https://public.tableau.com/app/profile/ramesh.g8388/viz/Toprevenuecities/Sheet3)
 
 ---
