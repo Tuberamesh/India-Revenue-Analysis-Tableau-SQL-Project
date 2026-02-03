@@ -93,6 +93,11 @@ All queries executed in **SQLite / DB Fiddle**:
 
 ---
 
+#Download the RAW data
+- [Raw CSV](https://github.com/Tuberamesh/Customer-Segmentation-Using-RFM-Analysis/blob/main/Desktop/RFM/online_retail.csv)
+  
+---
+
 > 🔹 **Project Flow:** Raw Transaction Data → SQL Aggregation → Tableau Dashboards → Actionable Insights  
 > 🔹 **Goal:** Provide a clear, interactive, and visually appealing way to analyze e-commerce revenue trends in India.
 
