@@ -93,8 +93,8 @@ All queries executed in **SQLite / DB Fiddle**:
 
 ---
 
-#Download the RAW data
-- [Raw CSV](https://github.com/Tuberamesh/Customer-Segmentation-Using-RFM-Analysis/blob/main/Desktop/RFM/online_retail.csv)
+## Download the RAW data
+- [Raw CSV 📄](https://github.com/Tuberamesh/India-Revenue-Analysis-Tableau-SQL-Project/blob/main/amazon_sales.csv)
   
 ---
 
